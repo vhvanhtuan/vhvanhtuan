@@ -13,13 +13,17 @@ I turn how travel companies and bus operators actually run into software that ru
 - 🌏 Sample tour booking sites on my travel platform: [site 1](https://vhv.dulichreal.com/) · [site 2](https://beta.dulichcongdongchaua.com/) (sample tour data)
 
 **Stack**
+
 React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code (AI-assisted development; I check and own the result)
 
 **How I work**
+
 Interview the people who do the work → model the process and status flows → design the data → build → train staff → run and improve.
 
 **Contact**
+
 [LinkedIn](https://www.linkedin.com/in/tuan-bui-anh-70659784) · [thiendi.com](https://thiendi.com) · hb.anhtuan@gmail.com (Tuan / Tony)
+
 
 ---
 
