@@ -10,6 +10,11 @@ I turn how travel companies and bus operators actually run into software that ru
 - Metadata-driven CMS back offices on React + PHP + MySQL
 
 **Featured**
+- 🚌 Live demo of my bus ticketing & cargo system: [vexedemo.dulichreal.com/control2](https://vexedemo.dulichreal.com/control2). Log in with `tester` / `tester` (shared demo data, no real customers). Things to try:
+  - Sell several seats at once on the seat map, then change seats, move a passenger to another trip or cancel. Every change is logged with who did it and when
+  - Print the seat map, passenger list and pick-up/drop-off list for the driver
+  - Create a cargo order with COD, print its label, then load it on a trip, unload it at the station and deliver it. You can do this with the mouse or by scanning the barcode on a phone
+  - End-of-shift reconciliation: ticket revenue by trip (Excel export) and cargo cash collected by each staff member
 - 🌏 Sample tour booking sites on my travel platform: [site 1](https://vhv.dulichreal.com/) · [site 2](https://beta.dulichcongdongchaua.com/) (sample tour data)
 
 **Stack**
