@@ -42,7 +42,7 @@ Two counters selling the same trip never sell the same seat: the seat map refres
 
 🧩 **Metadata-driven CMS** – the engine under both platforms: a new kind of data gets its list, form, search, menu entry and permissions from configuration rows, with no new API or screen code.
 
-<img src="docs/cms-diagram.png" alt="Declare once, one shared engine builds every screen" width="640">
+<img src="docs/cms-diagram-en.svg" alt="Declare once, one shared engine builds every screen" width="640">
 
 | Feature | What you declare | What staff get |
 | --- | --- | --- |
