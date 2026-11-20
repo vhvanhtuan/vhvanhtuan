@@ -25,7 +25,7 @@ I turn how travel companies and bus operators actually run into software that ru
 
 All modules run on the same metadata-driven CMS and auto-generated API, so each company's process can be adjusted without rewriting screens.
 
-📄 Feature overviews (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · [Metadata-driven CMS](docs/cms-tu-sinh-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/)
+📄 Feature overview (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/)
 
 🚌 **Bus operator platform** – ticketing, cargo and cash control for intercity bus companies, used daily at the counter, on the bus and at every station. Live demo (shared sample data): [online booking](https://vexedemo.dulichreal.com/) · [back office](https://vexedemo.dulichreal.com/control2) (login `tester` / `tester`)
 
@@ -39,6 +39,22 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 Two counters selling the same trip never sell the same seat: the seat map refreshes every few seconds and double booking is blocked at the database level.
 
 📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf)
+
+🧩 **Metadata-driven CMS** – the engine under both platforms: a new kind of data gets its list, form, search, menu entry and permissions from configuration rows, with no new API or screen code.
+
+<img src="docs/cms-diagram.png" alt="Declare once, one shared engine builds every screen" width="640">
+
+| Feature | What you declare | What staff get |
+| --- | --- | --- |
+| Tables | Display name, menu group, default sort, child tables | Menu entry for permitted roles; a tour opens with its departures, prices and photos |
+| Fields | Input type, where it shows, dropdown source query | Text, number, date, time, long text, select, radio, checkbox, file upload; dropdowns from other tables; dependent dropdowns (province → district, route → pick-up points) |
+| Lists | Which columns show | Search, filter per column, paging, up/down ordering |
+| Permissions | Read / create / update / delete per role and table; own-records-only rule | The same checks on every table, new or old |
+| Audit & tenants | Nothing extra | Creator, last editor and time set by the server; add a `tenant_id` column and the data is split per company automatically |
+
+Screens with special logic (seat maps, barcode scanning) are still built by hand; everything else — master data and day-to-day records — runs on the CMS. Adding a new record type such as agent contracts is configuration, not a development project.
+
+📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf)
 
 **Stack**
 
