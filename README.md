@@ -27,7 +27,7 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 
 **Stack**
 
-React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code (AI-assisted development; I check and own the result)
+React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code
 
 **How I work**
 
