@@ -25,6 +25,8 @@ I turn how travel companies and bus operators actually run into software that ru
 
 All modules run on the same metadata-driven CMS and auto-generated API, so each company's process can be adjusted without rewriting screens.
 
+📄 Feature overviews (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · [Metadata-driven CMS](docs/cms-tu-sinh-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/)
+
 **Stack**
 
 React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code
