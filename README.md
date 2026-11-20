@@ -27,6 +27,17 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 
 📄 Feature overviews (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · [Metadata-driven CMS](docs/cms-tu-sinh-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/)
 
+🚌 **Bus operator platform** – ticketing, cargo and cash control for intercity bus companies, used daily at the counter, on the bus and at every station. Live demo (shared sample data): [online booking](https://vexedemo.dulichreal.com/) · [back office](https://vexedemo.dulichreal.com/control2) (login `tester` / `tester`)
+
+| Business line | What customers can do online | What staff manage in the back office |
+| --- | --- | --- |
+| Trips | See trips by route and date with seats left and fare | Daily schedule generated automatically; bus, driver and extra trips; cargo-only trips |
+| Seat tickets | Pick a seat on the seat map, choose pick-up and drop-off points, get a ticket code | Sell several seats at once, move or swap seats (also to another trip), cancel; every change logged with who and when; print seat map, passenger and pick-up lists for the driver |
+| Cargo | | Orders with COD, barcode label and invoice; load on a trip → unload at the station → deliver, by mouse or by scanning with a phone camera (a wrong step is rejected with a beep) |
+| Cash control | | Ticket revenue by trip and route with Excel export; cargo cash collected by each staff member per shift; collection receipts |
+
+Two counters selling the same trip never sell the same seat: the seat map refreshes every few seconds and double booking is blocked at the database level.
+
 **Stack**
 
 React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code
