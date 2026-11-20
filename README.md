@@ -38,6 +38,8 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 
 Two counters selling the same trip never sell the same seat: the seat map refreshes every few seconds and double booking is blocked at the database level.
 
+📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf)
+
 **Stack**
 
 React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code
