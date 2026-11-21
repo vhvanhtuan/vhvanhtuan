@@ -25,7 +25,7 @@ I turn how travel companies and bus operators actually run into software that ru
 
 All modules run on the same metadata-driven CMS and auto-generated API, so each company's process can be adjusted without rewriting screens.
 
-📄 Feature overview (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/)
+📄 Feature overview (PDF, Vietnamese): [Travel platform](docs/dulichreal-platform-vi.pdf) · live demo: [beta.dulichreal.com](https://beta.dulichreal.com/) · [Roadmap](https://github.com/users/vhvanhtuan/projects/4)
 
 🚌 **Bus operator platform** – ticketing, cargo and cash control for intercity bus companies, used daily at the counter, on the bus and at every station. Live demo (shared sample data): [online booking](https://vexedemo.dulichreal.com/) · [back office](https://vexedemo.dulichreal.com/control2) (login `tester` / `tester`)
 
@@ -38,7 +38,7 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 
 Two counters selling the same trip never sell the same seat: the seat map refreshes every few seconds and double booking is blocked at the database level.
 
-📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf)
+📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/3)
 
 🧩 **Metadata-driven CMS** – the engine under both platforms: a new kind of data gets its list, form, search, menu entry and permissions from configuration rows, with no new API or screen code.
 
@@ -54,7 +54,7 @@ Two counters selling the same trip never sell the same seat: the seat map refres
 
 Screens with special logic (seat maps, barcode scanning) are still built by hand; everything else — master data and day-to-day records — runs on the CMS. Adding a new record type such as agent contracts is configuration, not a development project.
 
-📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf)
+📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/5)
 
 **Stack**
 
