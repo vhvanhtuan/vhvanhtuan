@@ -12,7 +12,7 @@ I turn how travel companies and bus operators actually run into software that ru
 
 **Featured**
 
-🌏 **Travel company platform** – one multi-tenant system that runs the websites and back office of travel companies. Sample sites (sample tour data): [site 1](https://vhv.dulichreal.com/) · [site 2](https://beta.dulichcongdongchaua.com/)
+🌏 **Travel company platform** – one multi-tenant system that runs the websites and back office of travel companies. In use at travel companies **Văn Hóa Việt** and **Cộng Đồng Châu Á**. Sample sites (sample tour data): [Văn Hóa Việt](https://vhv.dulichreal.com/) · [Cộng Đồng Châu Á](https://beta.dulichcongdongchaua.com/)
 
 | Business line | What customers can do online | What staff manage in the back office |
 | --- | --- | --- |
