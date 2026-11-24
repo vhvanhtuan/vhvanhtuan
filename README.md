@@ -40,6 +40,27 @@ Two counters selling the same trip never sell the same seat: the seat map refres
 
 📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/3)
 
+🏗️ **Platform architecture** – how the two platforms are built under the hood
+
+Both platforms share one PHP codebase. Each company (tenant) enables only the modules it needs; the router and permission layer are shared.
+
+**Unified modular API**
+- Single entry point: `api/app.php?m=<module>&a=<action>`
+- Each module has a manifest that declares auth requirement and permission (`can_read` / `can_create` / `can_update` / `can_delete`) per action — the router checks access automatically before the handler runs
+- File-per-action: only the manifest and the exact handler file are loaded per request, instead of a monolithic 4,000-line file; legacy URL files become thin wrappers for gradual migration
+
+**Module map**
+
+| Status | Modules |
+| --- | --- |
+| ✅ Live | system, content, tour, visa, crm, tools |
+| 🔄 In progress | vexe (bus tickets, seat maps, departures), cargo (shipments, delivery, receipts, debt), hotel, rental, pms, fleet |
+
+**Dashboard engine**
+- Widgets declared entirely in database rows — no code to add a new chart or KPI tile
+- Types: `agg` (structured aggregation with automatic tenant/permission scoping), `sql` (free SQL for platform admins), `combo` (sum across multiple widgets with different filters)
+- Display: bar, line, pie, number, table; per-user pinning; tenant-scoped data
+
 🧩 **Metadata-driven CMS** – the engine under both platforms: a new kind of data gets its list, form, search, menu entry and permissions from configuration rows, with no new API or screen code.
 
 <img src="docs/cms-diagram-en.svg" alt="Declare once, one shared engine builds every screen" width="640">
