@@ -75,7 +75,8 @@ Both platforms share one PHP codebase. Each company (tenant) enables only the mo
 
 Screens with special logic (seat maps, barcode scanning) are still built by hand; everything else — master data and day-to-day records — runs on the CMS. Adding a new record type such as agent contracts is configuration, not a development project.
 
-📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/5)
+📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf), Metadata-driven CMS — Phân tích từ góc độ 
+chuyên gia (docs/metadata-driven-cms-%E2%80%94-phan-tich-tu-goc-do-chuyen-gia.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/5)
 
 **Stack**
 
