@@ -38,6 +38,8 @@ All modules run on the same metadata-driven CMS and auto-generated API, so each 
 
 Two counters selling the same trip never sell the same seat: the seat map refreshes every few seconds and double booking is blocked at the database level.
 
+In daily use at **Hải Duyên** bus company — one of the large bus operators in Cai Lậy, Tiền Giang — since 2025.
+
 📄 [Full feature page: bus ticketing & cargo](docs/bus-ticketing-cargo.md) · [Trial guide for bus operators (PDF, Vietnamese)](docs/kich-ban-dung-thu-ve-xe-demo-cho-nha-xe.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/3)
 
 🏗️ **Platform architecture** – how the two platforms are built under the hood
@@ -45,9 +47,9 @@ Two counters selling the same trip never sell the same seat: the seat map refres
 Both platforms share one PHP codebase. Each company (tenant) enables only the modules it needs; the router and permission layer are shared.
 
 **Unified modular API**
-- Single entry point: `api/app.php?m=<module>&a=<action>`
-- Each module has a manifest that declares auth requirement and permission (`can_read` / `can_create` / `can_update` / `can_delete`) per action — the router checks access automatically before the handler runs
-- File-per-action: only the manifest and the exact handler file are loaded per request, instead of a monolithic 4,000-line file; legacy URL files become thin wrappers for gradual migration
+- One entry point for every business module, so new modules plug in without new routing code
+- Each module declares, per action, whether login is required and which role permission applies — access is checked centrally before any business logic runs
+- Small, focused handlers are loaded per request instead of large monolithic files; older endpoints were migrated step by step without breaking existing clients
 
 **Module map**
 
@@ -57,9 +59,9 @@ Both platforms share one PHP codebase. Each company (tenant) enables only the mo
 | 🔄 In progress | vexe (bus tickets, seat maps, departures), cargo (shipments, delivery, receipts, debt), hotel, rental, pms, fleet |
 
 **Dashboard engine**
-- Widgets declared entirely in database rows — no code to add a new chart or KPI tile
-- Types: `agg` (structured aggregation with automatic tenant/permission scoping), `sql` (free SQL for platform admins), `combo` (sum across multiple widgets with different filters)
-- Display: bar, line, pie, number, table; per-user pinning; tenant-scoped data
+- Widgets declared entirely as configuration — no code to add a new chart or KPI tile
+- Aggregations are scoped to the user's company and permissions automatically; combined KPIs can sum several widgets with different filters
+- Display: bar, line, pie, number, table; per-user pinning
 
 🧩 **Metadata-driven CMS** – the engine under both platforms: a new kind of data gets its list, form, search, menu entry and permissions from configuration rows, with no new API or screen code.
 
@@ -71,16 +73,17 @@ Both platforms share one PHP codebase. Each company (tenant) enables only the mo
 | Fields | Input type, where it shows, dropdown source query | Text, number, date, time, long text, select, radio, checkbox, file upload; dropdowns from other tables; dependent dropdowns (province → district, route → pick-up points) |
 | Lists | Which columns show | Search, filter per column, paging, up/down ordering |
 | Permissions | Read / create / update / delete per role and table; own-records-only rule | The same checks on every table, new or old |
-| Audit & tenants | Nothing extra | Creator, last editor and time set by the server; add a `tenant_id` column and the data is split per company automatically |
+| Audit & tenants | Nothing extra | Creator, last editor and time set by the server; data is split per company automatically |
 
 Screens with special logic (seat maps, barcode scanning) are still built by hand; everything else — master data and day-to-day records — runs on the CMS. Adding a new record type such as agent contracts is configuration, not a development project.
 
-📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf), [Metadata-driven CMS — Phân tích từ góc độ 
-chuyên gia](docs/metadata-driven-cms-%E2%80%94-phan-tich-tu-goc-do-chuyen-gia.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/5)
+📄 [CMS overview (PDF, Vietnamese)](docs/cms-tu-sinh-vi.pdf) · [Metadata-driven CMS — expert analysis (PDF, Vietnamese)](docs/metadata-driven-cms-%E2%80%94-phan-tich-tu-goc-do-chuyen-gia.pdf) · [Roadmap](https://github.com/users/vhvanhtuan/projects/5)
+
+🤖 **AI-assisted engineering** – I use Claude Code daily as part of a reviewed workflow: plan first, then specialized sub-agents for code search, security review and documentation, with every change going through a pull request. Routine operations (data checks, scheduled reports by email) run as automated AI tasks on the cheapest model that does the job.
 
 **Stack**
 
-React · JavaScript · PHP · MySQL · REST API · Docker · Claude Code
+React · JavaScript · PHP · MySQL / MariaDB · REST API · Git / GitHub · Claude Code · *currently learning: Docker, AWS*
 
 **How I work**
 
